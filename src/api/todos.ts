@@ -33,5 +33,11 @@ const updateTodo = async (todo: Todo): Promise<Todo> => {
   return response.json()
 }
 
-export { getAllTodos, createTodo, updateTodo }
+const deleteTodo = async (id: string): Promise<void> => {
+  await fetch(`${BASE_URL}/todos/${id}`, {
+    method: 'DELETE',
+  })
+}
+
+export { getAllTodos, createTodo, updateTodo, deleteTodo }
 export type { Todo }
