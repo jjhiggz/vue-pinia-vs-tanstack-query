@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 import { useTodos } from '@/composables/useTodos'
+import QueryTodoData from '@/components/QueryTodoData.vue'
 
 const { todos, isLoading, error, addTodo, isAddingTodo, toggleTodo, deleteTodo } = useTodos()
 const newTodoTitle = ref('')
@@ -18,6 +19,8 @@ const handleSubmit = async (e: Event) => {
   <div class="py-8">
     <div class="mx-auto max-w-3xl">
       <h1 class="mb-6 font-bold text-gray-900 text-3xl">Todo App with TanStack Query</h1>
+
+      <QueryTodoData />
 
       <!-- Error Alert -->
       <div v-if="error" class="bg-red-50 mb-4 p-4 rounded-md text-red-700">

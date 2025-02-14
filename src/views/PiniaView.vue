@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { ref, onMounted } from 'vue'
 import { useTodoStore } from '@/stores/todos'
+import PiniaTodoData from '@/components/PiniaTodoData.vue'
 
 const todoStore = useTodoStore()
 const newTodoTitle = ref('')
@@ -22,6 +23,8 @@ onMounted(() => {
   <div class="py-8">
     <div class="mx-auto max-w-3xl">
       <h1 class="mb-6 font-bold text-gray-900 text-3xl">Todo App with Pinia</h1>
+
+      <PiniaTodoData />
 
       <!-- Error Alert -->
       <div v-if="todoStore.error" class="bg-red-50 mb-4 p-4 rounded-md text-red-700">
